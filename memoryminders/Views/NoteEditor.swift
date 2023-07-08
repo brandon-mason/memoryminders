@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NoteEditor: View {
+    @Binding var isEditing: Bool
     @Environment(\.managedObjectContext) var moc
     @State private var title: String = "Title"
     @State private var content: String = "Content"
@@ -16,18 +17,22 @@ struct NoteEditor: View {
     var body: some View {
         VStack {
             TextEditor(text: $title)
-                .onChange(of: title, perform: { value in
-                    note.title = value
-                    try? moc.save()
-                })
+            .onChange(of: title, perform: { value in
+                note.title = value
+                try? moc.save()
+            })
             TextEditor(text: $content)
-                .onChange(of: content, perform: { value in
-                    note.content = value
-                    try? moc.save()
-                })
+            .onChange(of: content, perform: { value in
+                note.content = value
+                try? moc.save()
+            })
         }
         .onAppear {
             setTitleAndContent()
+            isEditing = true
+        }
+        .onDisappear {
+            isEditing = false
         }
     }
     

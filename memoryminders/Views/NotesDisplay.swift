@@ -9,47 +9,50 @@ import SwiftUI
 import CoreData
 
 struct NotesDisplay: View {
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var notes: FetchedResults<Note>
+    @Binding var isEditing: Bool
+    var notes: FetchedResults<Note>
+    @Environment(\.managedObjectContext) var moc    
+    @GestureState private var scale: CGFloat = 1.0
+    @State private var currentScale: CGFloat = 1.0
+    
+//    var magnification: some Gesture {
+//        MagnificationGesture()
+//            .updating($magnifyBy) { currentState, gestureState, transaction in
+//                gestureState = currentState.magnitude
+//            }
+//    }
+    
     var body: some View {
-        ZStack {
+        ScrollView([.horizontal, .vertical], showsIndicators: false) {
             NavigationView {
-                GroupBox {
+                VStack {
                     ForEach(notes, id: \.self) { note in
-                        NavigationLink {
-                            NoteEditor(note: note)
-                        } label: {
-                            NotePreview(note: note)
-                                .offset(x: CGFloat(note.x), y: CGFloat(note.y))
+                        NavigationLink(destination: NoteEditor(isEditing: $isEditing, note: note)) {
+                            NotePreview(isEditing: $isEditing, note: note)
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }
-            Group {
-                AddButton()
-                Button("Delete") {
-                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-
-                    // Create Batch Delete Request
-                    let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-
-                    do {
-                        print("Deleted All")
-                        try moc.execute(batchDeleteRequest)
-
-                    } catch {
-                        // Error Handling
-                    }
-                }.offset(y: -100)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         }
-//        .padding()
+            .ignoresSafeArea(.all)
+            .scaleEffect(currentScale * scale)
+//            .animation(.easeInOut(duration: 0.2), value: 1.0)
+            .gesture(
+                MagnificationGesture()
+                    .updating($scale) { value, scale, _ in
+                        scale = value.magnitude
+                        print(scale)
+                    }
+                    .onEnded { value in
+                        currentScale *= value.magnitude
+                    }
+            )
     }
 }
 
-struct NotesDisplay_Previews: PreviewProvider {
-    static var previews: some View {
-        NotesDisplay()
-    }
-}
+//struct NotesDisplay_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NotesDisplay()
+//    }
+//}

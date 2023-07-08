@@ -13,28 +13,36 @@ struct AddButton: View {
     @State private var didLongPress: Bool = false
     
     var body: some View {
-        Button() {
-            let title = "Title"
-            let content = "Content"
-            let note = Note(context: moc)
-            print(note)
-            note.id = UUID()
-            note.title = title
-            note.content = content
-            note.x = 0.0
-            note.y = 0.0
-            
-            try? moc.save()
-        } label: {
-            VStack {
+        VStack {
+            if didLongPress {
+                ColorPicker(didLongPress: $didLongPress)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+            } else {
                 Image(systemName: "plus.circle.fill")
+                    .scaleEffect(CGSize(width: 3, height: 3))
+                    .onTapGesture {
+                        print("Added")
+                        let title = "Title"
+                        let content = "Content"
+                        let note = Note(context: moc)
+                        note.id = UUID()
+                        note.title = title
+                        note.content = content
+                        note.x = 100.0
+                        note.y = 250.0
+                        note.color = Color.gray.toHex()
+                        
+                        try? moc.save()
+                    }
+                    .simultaneousGesture(LongPressGesture(minimumDuration: 0.5).onEnded { _ in
+                        didLongPress = !didLongPress
+                        print("didLongPress")
+                    })
+                    .font(.largeTitle)
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                //                .controlSize(.large)
             }
-            .font(.largeTitle)
-        }
-        .buttonStyle(PlainButtonStyle())
-        .controlSize(.large)
-        .onLongPressGesture {
-            didLongPress = true
         }
     }
 }

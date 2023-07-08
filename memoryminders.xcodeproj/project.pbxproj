@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CA0957A72A585CC700F6F9CD /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0957A62A585CC700F6F9CD /* ColorPicker.swift */; };
+		CA0957AC2A587C4D00F6F9CD /* ColorToHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0957AB2A587C4D00F6F9CD /* ColorToHex.swift */; };
+		CA0957AE2A587F5200F6F9CD /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0957AD2A587F5200F6F9CD /* HexToColor.swift */; };
 		CA57F1812A57C2A3006CC347 /* NotesDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57F1802A57C2A3006CC347 /* NotesDisplay.swift */; };
 		CA5DB1DE2A53118B00037283 /* memorymindersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5DB1DD2A53118B00037283 /* memorymindersApp.swift */; };
 		CA5DB1E02A53118B00037283 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5DB1DF2A53118B00037283 /* ContentView.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		CA0957A62A585CC700F6F9CD /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		CA0957AB2A587C4D00F6F9CD /* ColorToHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorToHex.swift; sourceTree = "<group>"; };
+		CA0957AD2A587F5200F6F9CD /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
 		CA57F1802A57C2A3006CC347 /* NotesDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDisplay.swift; sourceTree = "<group>"; };
 		CA5DB1DA2A53118B00037283 /* memoryminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoryminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5DB1DD2A53118B00037283 /* memorymindersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memorymindersApp.swift; sourceTree = "<group>"; };
@@ -48,6 +52,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA0957A82A5868C500F6F9CD /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CA5DB1F42A54BAAC00037283 /* Notes.xcdatamodeld */,
+				CA5DB1F82A54BB4200037283 /* DataController.swift */,
+				CA0957AB2A587C4D00F6F9CD /* ColorToHex.swift */,
+				CA0957AD2A587F5200F6F9CD /* HexToColor.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		CA5DB1D12A53118B00037283 = {
 			isa = PBXGroup;
 			children = (
@@ -67,14 +82,13 @@
 		CA5DB1DC2A53118B00037283 /* memoryminders */ = {
 			isa = PBXGroup;
 			children = (
+				CA0957A82A5868C500F6F9CD /* Tools */,
 				CA5DB1FA2A54BED000037283 /* Model */,
 				CA5DB1EC2A53122A00037283 /* Views */,
 				CA5DB1DD2A53118B00037283 /* memorymindersApp.swift */,
 				CA5DB1E12A53118C00037283 /* Assets.xcassets */,
 				CA5DB1E32A53118C00037283 /* memoryminders.entitlements */,
 				CA5DB1E42A53118C00037283 /* Preview Content */,
-				CA5DB1F42A54BAAC00037283 /* Notes.xcdatamodeld */,
-				CA5DB1F82A54BB4200037283 /* DataController.swift */,
 			);
 			path = memoryminders;
 			sourceTree = "<group>";
@@ -179,8 +193,10 @@
 			files = (
 				CA5DB1F02A533B0D00037283 /* NotePreview.swift in Sources */,
 				CA5DB1F92A54BB4200037283 /* DataController.swift in Sources */,
+				CA0957AE2A587F5200F6F9CD /* HexToColor.swift in Sources */,
 				CA5DB1FE2A57577400037283 /* NoteEditor.swift in Sources */,
 				CA5DB1F72A54BAAC00037283 /* Notes.xcdatamodeld in Sources */,
+				CA0957AC2A587C4D00F6F9CD /* ColorToHex.swift in Sources */,
 				CA57F1812A57C2A3006CC347 /* NotesDisplay.swift in Sources */,
 				CA0957A72A585CC700F6F9CD /* ColorPicker.swift in Sources */,
 				CA5DB1E02A53118B00037283 /* ContentView.swift in Sources */,
