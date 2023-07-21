@@ -45,11 +45,11 @@ struct AddButton: View {
                             didLongPress = !didLongPress
                             print("didLongPress")
                         })
-                        .onAppear {
-                            withAnimation(.easeInOut(duration: 0.5).speed(2).repeatCount(1)) {
-                                isRotated = 0.0
-                            }
-                        }
+//                        .onAppear {
+//                            withAnimation(.easeInOut(duration: 0.5).speed(2).repeatCount(1)) {
+//                                isRotated = 0.0
+//                            }
+//                        }
                 }
             }
         }

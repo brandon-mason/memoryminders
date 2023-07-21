@@ -52,18 +52,35 @@ struct ColorPicker: View {
                 }
                     .offset(x: 0, y: isLifted)
                     .onAppear {
-                        withAnimation(.spring()
-                            .speed(2).repeatCount(1)) {
-                                isLifted = 0
+                        withAnimation(.spring().speed(2).repeatCount(1)) {
+                                isLifted = -35
                             }
                     }
+//                    .onDisappear {
+//                        print("h")
+//                        withAnimation(.default.speed(2).repeatCount(1)) {
+//                                isLifted = 500
+//                                print(isLifted)
+//                            }
+//                    }
                 Image(systemName: "plus.circle.fill")
                     .font(.largeTitle)
                     .rotationEffect(.degrees(isRotated))
                     .scaleEffect(CGSize(width: 3, height: 3))
                     .buttonStyle(PlainButtonStyle())
                     .onTapGesture {
-                        didLongPress = false
+                        withAnimation(.spring().speed(2).repeatCount(1)) {
+                            isLifted = 500
+                            print(isLifted)
+                        }
+                        withAnimation(.easeInOut(duration: 0.5).speed(2).repeatCount(1)) {
+                            isRotated = 0.0
+                            print("l")
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                            didLongPress = false
+                        }
+                        
                     }
                     .onAppear {
                         withAnimation(.easeInOut(duration: 0.5)
@@ -71,6 +88,12 @@ struct ColorPicker: View {
                                 isRotated = 45.0
                             }
                     }
+//                    .onDisappear {
+//                        withAnimation(.easeInOut(duration: 0.5).speed(2).repeatCount(1)) {
+//                            isRotated = 0.0
+//                            print("l")
+//                        }
+//                    }
             }
             .frame(maxWidth: geometry.size.width * 0.975, maxHeight: .infinity, alignment: .bottomTrailing)
         }
