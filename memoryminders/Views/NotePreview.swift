@@ -41,17 +41,7 @@ struct NotePreview: View {
         if movingNotes {
             ZStack {
                 Group {
-                    VStack {
-                        Text(note.title ?? "Unknown")
-                            .font(Font.system(size: 10))
-                        Divider()
-                        Text(note.content ?? "Unknown")
-                            .font(Font.system(size: 8))
-                        Text(String(note.x))
-                            .font(Font.system(size: 8))
-                        Text(String(note.y))
-                            .font(Font.system(size: 8))
-                    }
+                    NoteContent(note: note)
                 }
                 .frame(width: 50, height: 50)
                 .padding()
@@ -95,17 +85,7 @@ struct NotePreview: View {
         } else {
             ZStack {
                 Group {
-                    VStack {
-                        Text(note.title ?? "Unknown")
-                            .font(Font.system(size: 10))
-                        Divider()
-                        Text(note.content ?? "Unknown")
-                            .font(Font.system(size: 8))
-                        Text(String(note.x))
-                            .font(Font.system(size: 8))
-                        Text(String(note.y))
-                            .font(Font.system(size: 8))
-                    }
+                    NoteContent(note: note)
                 }
                 .frame(width: 50, height: 50)
                 .padding()

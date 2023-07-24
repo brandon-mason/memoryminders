@@ -20,6 +20,7 @@
 		CA5DB1F72A54BAAC00037283 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA5DB1F42A54BAAC00037283 /* Notes.xcdatamodeld */; };
 		CA5DB1F92A54BB4200037283 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5DB1F82A54BB4200037283 /* DataController.swift */; };
 		CA5DB1FE2A57577400037283 /* NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5DB1FD2A57577400037283 /* NoteEditor.swift */; };
+		CAE07E1C2A6F4449001EA2E8 /* NoteContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE07E1B2A6F4449001EA2E8 /* NoteContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		CA5DB1F62A54BAAC00037283 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CA5DB1F82A54BB4200037283 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		CA5DB1FD2A57577400037283 /* NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditor.swift; sourceTree = "<group>"; };
+		CAE07E1B2A6F4449001EA2E8 /* NoteContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		CA5DB1EC2A53122A00037283 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CAE07E1B2A6F4449001EA2E8 /* NoteContent.swift */,
 				CA5DB1DF2A53118B00037283 /* ContentView.swift */,
 				CA5DB1ED2A531EEE00037283 /* AddButton.swift */,
 				CA5DB1EF2A533B0D00037283 /* NotePreview.swift */,
@@ -193,6 +196,7 @@
 			files = (
 				CA5DB1F02A533B0D00037283 /* NotePreview.swift in Sources */,
 				CA5DB1F92A54BB4200037283 /* DataController.swift in Sources */,
+				CAE07E1C2A6F4449001EA2E8 /* NoteContent.swift in Sources */,
 				CA0957AE2A587F5200F6F9CD /* HexToColor.swift in Sources */,
 				CA5DB1FE2A57577400037283 /* NoteEditor.swift in Sources */,
 				CA5DB1F72A54BAAC00037283 /* Notes.xcdatamodeld in Sources */,
