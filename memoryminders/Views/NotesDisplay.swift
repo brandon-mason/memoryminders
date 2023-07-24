@@ -52,7 +52,6 @@ struct NotesDisplay: View {
                         ZStack {
                             Button(action: {
                                 movingNotes = false
-                                print("movingNotes", movingNotes)
                             }) {
                                 Color.clear
                             }

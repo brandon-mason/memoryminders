@@ -27,7 +27,6 @@ struct AddButton: View {
                         .frame(maxWidth: geometry.size.width * 0.9, maxHeight: .infinity, alignment: .bottomTrailing)
                         .buttonStyle(PlainButtonStyle())
                         .onTapGesture {
-                            print("Added")
                             let title = "Title"
                             let content = "Content"
                             let note = Note(context: moc)
@@ -43,7 +42,6 @@ struct AddButton: View {
                         }
                         .simultaneousGesture(LongPressGesture(minimumDuration: 0.5).onEnded { _ in
                             didLongPress = !didLongPress
-                            print("didLongPress")
                         })
 //                        .onAppear {
 //                            withAnimation(.easeInOut(duration: 0.5).speed(2).repeatCount(1)) {

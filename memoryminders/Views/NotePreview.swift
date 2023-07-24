@@ -123,11 +123,9 @@ struct NotePreview: View {
                 .onAppear {
                     setLocation(x: note.x, y: note.y)
                     setColor(hex: note.color ?? "FFFFFF")
-                    print("appeared")
                 }
                 .gesture(LongPressGesture(minimumDuration: 1.0).onEnded { _ in
                     movingNotes = true
-                    print("movingNotes", movingNotes)
                 })
             }
         }
