@@ -41,6 +41,7 @@
 		CA5DB1F82A54BB4200037283 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		CA5DB1FD2A57577400037283 /* NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditor.swift; sourceTree = "<group>"; };
 		CAE07E1B2A6F4449001EA2E8 /* NoteContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteContent.swift; sourceTree = "<group>"; };
+		CAF49AB92D42B344005DF02B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		CA5DB1D12A53118B00037283 = {
 			isa = PBXGroup;
 			children = (
+				CAF49AB92D42B344005DF02B /* .gitignore */,
 				CA5DB1DC2A53118B00037283 /* memoryminders */,
 				CA5DB1DB2A53118B00037283 /* Products */,
 			);

@@ -19,13 +19,13 @@ struct NoteContent: View {
             Divider()
             Text(content)
                 .font(Font.system(size: 8))
-            Text(content)
-                .font(Font.system(size: 8))
+                .fixedSize(horizontal: false, vertical: true)
         }
         .onAppear {
             makeTitle(title: note.title ?? "Unknown")
             makeContent(content: note.content ?? "Unknown")
         }
+        .offset(x: 0, y: 10)
     }
     
     private func makeTitle(title: String) {
@@ -33,7 +33,7 @@ struct NoteContent: View {
     }
     
     private func makeContent(content: String) {
-        self.content = content.count > 64 ? (content[content.index(content.startIndex, offsetBy: 0)..<content.index(content.startIndex, offsetBy: 64)]) + "..." : content
+        self.content = content.count > 32 ? (content[content.index(content.startIndex, offsetBy: 0)..<content.index(content.startIndex, offsetBy: 32)]) + "..." : content
     }
 }
 
