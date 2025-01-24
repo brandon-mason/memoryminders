@@ -9,5 +9,5 @@ It was my first attempt at developing with Swift and I would've liked to add mor
 - Selecting the color of the next note to be added.
 - Moving notes around the canvas via dragging and dropping.
 <p align="center">
-	<img src="https://imgur.com/a/sJ6bKAY" width="50%" style="margin: auto;"/>
+	<img src="https://imgur.com/iPzpUMi.gif" width="50%" style="margin: auto;"/>
 </p>
